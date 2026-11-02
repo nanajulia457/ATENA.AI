@@ -1,0 +1,42 @@
+[
+  {
+    "pergunta": "Quando é a entrega da Proposta Inicial de Pesquisa?",
+    "trechos_esperados": ["Entrega da Proposta Inicial de Pesquisa"]
+  },
+  {
+    "pergunta": "Quando os alunos entregam a Proposta Inicial ao orientador?",
+    "trechos_esperados": ["entrega ao orientador a Proposta Inicial da Pesquisa"]
+  },
+  {
+    "pergunta": "Como é calculada a nota da disciplina?",
+    "trechos_esperados": ["NProp × 20% + NRevi × 20% + NProj × 60%"]
+  },
+  {
+    "pergunta": "Quem atribui a nota do Projeto de Pesquisa?",
+    "trechos_esperados": ["atribuída exclusivamente pela orientação"]
+  },
+  {
+    "pergunta": "Qual o prazo para entregar a carta de aceitação de orientação?",
+    "trechos_esperados": ["data limite para entrega dos alunos da carta de aceitação"]
+  },
+  {
+    "pergunta": "Quando saem as notas finais?",
+    "trechos_esperados": ["Aula 19", "Aula 20"]
+  },
+  {
+    "pergunta": "Até quando o aluno deve enviar a versão final do Projeto de Pesquisa ao orientador?",
+    "trechos_esperados": ["enviar ao orientador a versão final"]
+  },
+  {
+    "pergunta": "Quando é a entrega da Proposta Revisada de Pesquisa no Moodle?",
+    "trechos_esperados": ["Alunos: entrega no Moodle da Proposta Revisada de Pesquisa"]
+  },
+  {
+    "pergunta": "Quais são os feriados do semestre?",
+    "trechos_esperados": ["16/02", "20/04"]
+  },
+  {
+    "pergunta": "Quem avalia a Proposta Revisada de Pesquisa?",
+    "trechos_esperados": ["2 PROFESSORES ALEATÓRIOS DA ÁREA"]
+  }
+]
