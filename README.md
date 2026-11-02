@@ -19,14 +19,19 @@ descrita no capítulo 5 do trabalho:
 | Script de ingestão | `src/scripts/ingest.py` |
 | Testes | `tests/test_chunking.py` |
 
-## ⚠️ Importante sobre este ambiente
+## Estrutura do repositório
 
-Este código foi escrito e a lógica de chunking foi testada e validada aqui.
-Porém, rodar o **sistema completo** (Docling, embeddings, pgvector, chamada
-ao LLM) requer: acesso à internet (para baixar modelos e chamar a API do
-LLM) e um banco PostgreSQL com a extensão `pgvector` — recursos que este
-ambiente de chat não possui. Por isso, os passos abaixo são para você
-executar na sua máquina.
+```
+├── client/            aplicação cliente (Streamlit) e imagens da marca
+├── data/
+│   ├── raw/           documentos de entrada da ingestão
+│   ├── debug/         texto extraído e chunks gerados (conferência)
+│   └── eval/          gabaritos de perguntas para a avaliação
+├── resultados/        métricas da avaliação (antes.csv e depois.csv)
+├── src/               código do sistema (ingestão, indexação, RAG, API, scripts)
+├── tests/             testes automatizados
+└── .streamlit/        tema da interface
+```
 
 ## 1. Pré-requisitos
 
@@ -153,3 +158,48 @@ documentos reais.
 
 Com o Docker Desktop aberto ("Engine running"), dê duplo clique em
 `iniciar_atena.bat`. Ele sobe o banco, a API e a aplicação em janelas separadas.
+
+## Documentos da disciplina (`data/raw/`)
+
+- `CALENDARIO CMPMPSI 2026-1.pdf` e `Atividade 1 - Revisão de Banco de Dados 1 - 367540).docx`:
+  documentos reais da disciplina, publicados com autorização dos professores.
+- `plano_de_ensino_exemplo.txt`: documento **fictício**, usado pelo gabarito
+  `data/eval/perguntas_exemplo.json` para testar o pipeline de ponta a ponta.
+
+A ingestão processa todos os arquivos da pasta.
+
+## Arquivos de conferência (`data/debug/`)
+
+Gerados automaticamente pelo `src/scripts/ingest.py` a cada ingestão. Servem
+para verificar o que o sistema "enxergou" de cada documento:
+
+- `<documento>.extraido.md`: texto que o Docling extraiu do PDF/DOCX, em
+  Markdown. Mostra, por exemplo, como as tabelas do calendário foram lidas.
+- `chunks.txt`: lista de todos os chunks gerados, com o documento de origem,
+  a posição e o tamanho em caracteres. Nele é possível ver o chunking de
+  tabelas em ação: cada linha do calendário vira um chunk próprio, no
+  formato `16/03 (março): ...`.
+
+Como a ingestão recria esses arquivos, eles refletem sempre a última execução.
+
+## Resultados da avaliação (`resultados/`)
+
+`antes.csv` e `depois.csv` trazem as métricas de recuperação calculadas pelo
+`src/scripts/evaluate.py` para as 10 perguntas do gabarito
+`data/eval/perguntas_calendario.json`, antes e depois dos ajustes no pipeline.
+Cada linha é uma pergunta em um valor de k (1, 3 e 5), com precisão,
+revocação, medida F e a posição do primeiro chunk relevante no ranking
+(0 = nenhum relevante encontrado). Os arquivos usam `;` como separador e
+vírgula decimal, para abrir direto no Excel.
+
+Médias das 10 perguntas:
+
+| k | Precisão (antes → depois) | Revocação (antes → depois) | Medida F (antes → depois) |
+|---|---|---|---|
+| 1 | 0,200 → 0,100 | 0,150 → 0,100 | 0,171 → 0,100 |
+| 3 | 0,100 → 0,133 | 0,200 → 0,400 | 0,133 → 0,200 |
+| 5 | 0,100 → 0,100 | 0,400 → 0,500 | 0,160 → 0,167 |
+
+A medida F da tabela é a média harmônica entre a precisão e a revocação
+médias, como no `evaluate.py`. Lembre que a precisão@k fica limitada quando há
+poucos chunks relevantes por pergunta (veja a seção de avaliação acima).
