@@ -24,7 +24,8 @@ descrita no capítulo 5 do trabalho:
 ```
 ├── client/            aplicação cliente (Streamlit) e imagens da marca
 ├── data/
-│   ├── raw/           documentos de entrada da ingestão
+│   ├── raw/           documentos da disciplina usados no TCC (entrada da ingestão)
+│   ├── exemplo/       documento fictício para testes
 │   ├── debug/         texto extraído e chunks gerados (conferência)
 │   └── eval/          gabaritos de perguntas para a avaliação
 ├── resultados/        métricas da avaliação (antes.csv e depois.csv)
@@ -38,7 +39,7 @@ descrita no capítulo 5 do trabalho:
 - Python 3.10+
 - Docker (para subir o Postgres com pgvector facilmente) — ou uma instância
   Postgres própria com a extensão `pgvector` instalada.
-- Uma chave de API da OpenAI **ou** da Anthropic.
+- Uma chave de API do Groq (gratuita, usada no TCC), da OpenAI **ou** da Anthropic.
 
 ## 2. Instalação
 
@@ -48,7 +49,8 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
 cp .env.example .env
-# edite o .env e preencha OPENAI_API_KEY ou ANTHROPIC_API_KEY (e LLM_PROVIDER)
+# edite o .env: preencha GROQ_API_KEY (padrão), ou OPENAI_API_KEY / ANTHROPIC_API_KEY
+# trocando LLM_PROVIDER e LLM_MODEL
 ```
 
 ## 3. Subir o banco vetorial
@@ -59,10 +61,14 @@ docker compose up -d
 
 ## 4. Colocar os documentos da disciplina
 
-Coloque os arquivos PDF/DOCX reais (planos de ensino, cronogramas etc.) em
-`data/raw/`. Já incluí `data/raw/plano_de_ensino_exemplo.txt`, um documento
-**fictício**, só para você testar o pipeline de ponta a ponta antes de ter
-os documentos oficiais em mãos.
+A pasta `data/raw/` já traz os dois documentos usados no TCC (veja
+"Documentos da disciplina" abaixo). Para usar outros, coloque os arquivos
+PDF/DOCX em `data/raw/`.
+
+Há também um documento **fictício**, `data/exemplo/plano_de_ensino_exemplo.txt`,
+para testar o pipeline sem os documentos reais. Ele fica fora de `data/raw/`
+para não entrar no índice do TCC; para usá-lo, rode a ingestão com
+`--dir data/exemplo`.
 
 ## 5. Rodar a ingestão (processa, chunka, gera embeddings e indexa)
 
@@ -136,23 +142,25 @@ consulte https://console.groq.com/docs/models e troque o `LLM_MODEL`.
 ## Avaliação da recuperação (precisão, revocação e medida F)
 
 O gabarito fica em JSON, com perguntas e os trechos que precisam aparecer no
-contexto recuperado (veja `data/eval/perguntas_exemplo.json`):
+contexto recuperado (veja `data/eval/perguntas_calendario.json`, o gabarito
+usado no TCC):
 
 ```json
-[{"pergunta": "Quando é a Prova 1?", "trechos_esperados": ["Semana 8 (28/09): Prova 1"]}]
+[{"pergunta": "Quando é a entrega da Proposta Inicial de Pesquisa?", "trechos_esperados": ["Entrega da Proposta Inicial de Pesquisa"]}]
 ```
 
 Rodar (com o banco no ar e a ingestão feita):
 
 ```bash
-python -m src.scripts.evaluate --gold data/eval/perguntas_exemplo.json --k 1 3 5 --csv resultados.csv
+python -m src.scripts.evaluate --gold data/eval/perguntas_calendario.json --k 1 3 5 --csv resultados.csv
 ```
 
 Um chunk é relevante se contém pelo menos um trecho esperado. A precisão@k é
 limitada quando há poucos chunks relevantes por pergunta (com 1 relevante,
 a precisão@5 é no máximo 0,20), por isso o script reporta vários valores de k.
-Para a avaliação do TCC, crie um gabarito com perguntas sobre os seus
-documentos reais.
+
+O gabarito `data/eval/perguntas_exemplo.json` corresponde ao documento
+fictício: para usá-lo, faça a ingestão com `--dir data/exemplo`.
 
 ## Iniciar tudo com um clique (Windows)
 
@@ -163,10 +171,8 @@ Com o Docker Desktop aberto ("Engine running"), dê duplo clique em
 
 - `CALENDARIO CMPMPSI 2026-1.pdf` e `Atividade 1 - Revisão de Banco de Dados 1 - 367540).docx`:
   documentos reais da disciplina, publicados com autorização dos professores.
-- `plano_de_ensino_exemplo.txt`: documento **fictício**, usado pelo gabarito
-  `data/eval/perguntas_exemplo.json` para testar o pipeline de ponta a ponta.
-
-A ingestão processa todos os arquivos da pasta.
+A ingestão processa todos os arquivos da pasta, ou seja, exatamente os dois
+documentos avaliados no TCC. O documento fictício fica em `data/exemplo/`.
 
 ## Arquivos de conferência (`data/debug/`)
 
@@ -208,6 +214,12 @@ Médias das 10 perguntas (medida F = média das medidas F por pergunta):
 
 A comparação não isola o efeito da segmentação, pois o acervo também mudou
 entre as duas execuções. A discussão completa está no texto do TCC.
+
+**Reprodutibilidade:** o `depois.csv` pode ser reproduzido com o código atual
+(ingestão de `data/raw/` e avaliação com `perguntas_calendario.json`). O
+`antes.csv` **não**: o código da segmentação inicial foi substituído antes de
+o repositório ser criado e não está no histórico do Git. O arquivo é mantido
+como registro da execução descrita no TCC.
 
 Observação: o resumo impresso pelo `evaluate.py` calcula a medida F geral como
 a média harmônica entre a precisão e a revocação médias, por isso pode diferir
