@@ -186,20 +186,29 @@ Como a ingestão recria esses arquivos, eles refletem sempre a última execuçã
 
 `antes.csv` e `depois.csv` trazem as métricas de recuperação calculadas pelo
 `src/scripts/evaluate.py` para as 10 perguntas do gabarito
-`data/eval/perguntas_calendario.json`, antes e depois dos ajustes no pipeline.
+`data/eval/perguntas_calendario.json`:
+
+- **antes**: segmentação inicial, em que linhas da tabela do calendário eram
+  misturadas no mesmo chunk; acervo só com o calendário;
+- **depois**: segmentação refinada, sensível à estrutura das tabelas (um chunk
+  por linha de data); acervo com o calendário e a atividade de Banco de Dados 2.
+
 Cada linha é uma pergunta em um valor de k (1, 3 e 5), com precisão,
 revocação, medida F e a posição do primeiro chunk relevante no ranking
 (0 = nenhum relevante encontrado). Os arquivos usam `;` como separador e
 vírgula decimal, para abrir direto no Excel.
 
-Médias das 10 perguntas:
+Médias das 10 perguntas (medida F = média das medidas F por pergunta):
 
 | k | Precisão (antes → depois) | Revocação (antes → depois) | Medida F (antes → depois) |
 |---|---|---|---|
-| 1 | 0,200 → 0,100 | 0,150 → 0,100 | 0,171 → 0,100 |
-| 3 | 0,100 → 0,133 | 0,200 → 0,400 | 0,133 → 0,200 |
-| 5 | 0,100 → 0,100 | 0,400 → 0,500 | 0,160 → 0,167 |
+| 1 | 0,200 → 0,100 | 0,150 → 0,100 | 0,167 → 0,100 |
+| 3 | 0,100 → 0,133 | 0,200 → 0,400 | 0,130 → 0,200 |
+| 5 | 0,100 → 0,100 | 0,400 → 0,500 | 0,157 → 0,167 |
 
-A medida F da tabela é a média harmônica entre a precisão e a revocação
-médias, como no `evaluate.py`. Lembre que a precisão@k fica limitada quando há
-poucos chunks relevantes por pergunta (veja a seção de avaliação acima).
+A comparação não isola o efeito da segmentação, pois o acervo também mudou
+entre as duas execuções. A discussão completa está no texto do TCC.
+
+Observação: o resumo impresso pelo `evaluate.py` calcula a medida F geral como
+a média harmônica entre a precisão e a revocação médias, por isso pode diferir
+um pouco dos valores acima (ex.: k = 5 antes dá 0,160 por esse método).
