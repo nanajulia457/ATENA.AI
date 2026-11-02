@@ -1,0 +1,64 @@
+PLANO DE ENSINO — DISCIPLINA: ENGENHARIA DE SOFTWARE II
+Curso: Tecnólogo em Análise e Desenvolvimento de Sistemas
+Docente: Prof. Me. Carlos Andrade
+Semestre: 2026/2
+Carga horária: 80 horas
+
+1. EMENTA
+Estudo de práticas avançadas de engenharia de software, incluindo arquitetura de
+sistemas, testes automatizados, integração contínua e metodologias ágeis aplicadas
+a projetos de médio e grande porte.
+
+2. OBJETIVOS
+- Compreender padrões arquiteturais utilizados em sistemas distribuídos;
+- Aplicar técnicas de teste unitário, de integração e end-to-end;
+- Utilizar ferramentas de integração contínua (CI/CD);
+- Desenvolver um projeto prático em equipe, com entregas incrementais.
+
+3. CRONOGRAMA DE AULAS
+Semana 1 (10/08): Introdução à disciplina e revisão de arquitetura de software.
+Semana 2 (17/08): Padrões arquiteturais — MVC, camadas, microsserviços.
+Semana 3 (24/08): Testes unitários com pytest.
+Semana 4 (31/08): Testes de integração e mocks.
+Semana 5 (07/09): Integração contínua com GitHub Actions.
+Semana 6 (14/09): Entrega do Trabalho Prático 1 (Projeto de Arquitetura).
+Semana 7 (21/09): Contêineres e Docker.
+Semana 8 (28/09): Prova 1 — conteúdo das semanas 1 a 7.
+Semana 9 (05/10): Metodologias ágeis — Scrum e Kanban.
+Semana 10 (12/10): Revisão de código e boas práticas (Clean Code).
+Semana 11 (19/10): Entrega do Trabalho Prático 2 (Pipeline CI/CD).
+Semana 12 (26/10): Apresentação dos projetos finais.
+Semana 13 (02/11): Prova 2 — conteúdo das semanas 9 a 12.
+Semana 14 (09/11): Prova substitutiva (opcional).
+Semana 15 (16/11): Encerramento e divulgação de notas finais.
+
+4. CRITÉRIOS DE AVALIAÇÃO
+A nota final será composta por:
+- Trabalho Prático 1 (TP1): peso 3,0 — entregue via Moodle até 23h59 do dia da aula;
+- Trabalho Prático 2 (TP2): peso 3,0 — entregue via Moodle até 23h59 do dia da aula;
+- Prova 1: peso 2,0;
+- Prova 2: peso 2,0.
+A média final é a soma ponderada dos itens acima. É necessário obter média igual
+ou superior a 6,0 para aprovação direta, sem necessidade de exame final.
+Frequência mínima exigida: 75% das aulas.
+
+5. TRABALHOS PRÁTICOS — DETALHES
+O Trabalho Prático 1 consiste na elaboração de um documento de arquitetura de
+software para um sistema fictício, incluindo diagrama de componentes e justificativa
+das escolhas arquiteturais. Deve ser feito em duplas e entregue em formato PDF.
+
+O Trabalho Prático 2 consiste na implementação de um pipeline de integração
+contínua (CI) para um repositório de código fornecido pelo docente, incluindo
+execução automática de testes e build. Deve ser entregue como link de repositório
+Git com o pipeline configurado.
+
+6. BIBLIOGRAFIA
+SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2019.
+MARTIN, Robert C. Código Limpo: Habilidades Práticas do Agile Software. Alta
+Books, 2019.
+FOWLER, Martin. Padrões de Arquitetura de Aplicações Corporativas. Bookman, 2006.
+
+7. ATENDIMENTO AO ALUNO
+O docente atende às terças e quintas-feiras, das 14h às 16h, na sala 12 do bloco B,
+ou por e-mail: carlos.andrade@ifsp.edu.br. Dúvidas sobre entregas no Moodle devem
+ser reportadas com pelo menos 24 horas de antecedência do prazo final.
