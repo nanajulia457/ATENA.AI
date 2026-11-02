@@ -1,0 +1,15 @@
+# Tema padrão da Atena.AI: escuro (o botão no topo alterna para o claro).
+# O visual completo está no CSS de client/app.py; aqui só definimos a base.
+[theme]
+base = "dark"
+primaryColor = "#B455A8"
+backgroundColor = "#150818"
+secondaryBackgroundColor = "#22102A"
+textColor = "#F6ECF4"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
