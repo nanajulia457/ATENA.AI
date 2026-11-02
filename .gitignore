@@ -1,0 +1,18 @@
+# Segredos (chaves de API)
+.env
+
+# Ambiente virtual e cache do Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Resultados gerados
+resultados.csv
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

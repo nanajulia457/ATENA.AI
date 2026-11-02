@@ -1,0 +1,32 @@
+
+# --- Configuração ---
+python-dotenv>=1.0.1
+ 
+# --- Processamento de documentos (objetivo específico b) ---
+docling>=2.15.0
+ 
+# --- Embeddings (objetivo específico c) ---
+sentence-transformers>=3.3.0
+ 
+# --- Orquestração RAG + banco vetorial (objetivo específico d) ---
+llama-index>=0.12.0
+llama-index-vector-stores-postgres>=0.4.0
+llama-index-embeddings-huggingface>=0.4.0
+psycopg2-binary>=2.9.10
+pgvector>=0.3.6
+ 
+# --- API REST (objetivo específico e) ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+pydantic>=2.10.0
+ 
+# --- LLM de geração ---
+openai>=1.58.0
+anthropic>=0.42.0
+ 
+# --- Aplicação cliente (objetivo específico f) ---
+streamlit>=1.41.0
+requests>=2.32.0
+ 
+# --- Testes (objetivo específico g) ---
+pytest>=8.3.0
