@@ -1,0 +1,104 @@
+=== [0] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (486 caracteres)
+**Instituto Federal de Educação, Ciência e Tecnologia** Câmpus Campinas  CMPBCD2 – Banco de Dados 2 **Professor:** — Everton Meyer da Silva (everton.silva@ifsp.edu.br) ### Objetivo # Atividade 1 Atividade Prática de Banco de Dados Criação e Manipulação de Dados Nesta atividade, você deverá criar e manipular um banco de dados que representa uma **Livraria** . Será necessário: - Criar o banco de dados e as tabelas com chaves primárias, estrangeiras e demais restrições de integridade.
+
+=== [1] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (503 caracteres)
+primárias, estrangeiras e demais restrições de integridade. - Criar um novo usuário com permissões específicas para o banco. - Inserir dados nas tabelas usando instruções INSERT INTO. - Realizar consultas básicas (SELECT) para verificar o correto funcionamento do esquema de banco de dados. O objetivo é praticar a criação de objetos de banco de dados, definição de chaves, restrições de integridade e manipulação de dados em SQL (MySQL) ### Etapas da atividade ##### Criação do banco de dados (1 ponto)
+
+=== [2] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (504 caracteres)
+Etapas da atividade ##### Criação do banco de dados (1 ponto) - Faça login no MySQL com o usuário root. - Crie um banco de dados chamado **livraria** . <!-- image --> ##### Criação de usuário e concessão de privilégios (1,5 pontos) - Crie um novo usuário, por exemplo **userliv** com a senha **cmpbooks** . - **Conceda privilégios ao novo usuário para que ele possa manipular o banco de dados livraria.** <!-- image --> ##### Criação das tabelas (2 pontos) - Faça login com o novo usuário que você criou.
+
+=== [3] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (472 caracteres)
+(2 pontos) - Faça login com o novo usuário que você criou. - Crie as tabelas relacionadas à **livraria** . As tabelas devem ser as seguintes: Crie todas as chaves primárias, estrangeiras e restrições de integridade (como **NOT NULL** , etc.) de acordo com sua modelagem. ##### Inserção de dados (2,5 pontos) - Insira dados nas tabelas utilizando comandos **INSERT INTO** . - Garanta que haja dados suficientes para testar as consultas que serão solicitadas posteriormente.
+
+=== [4] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (493 caracteres)
+para testar as consultas que serão solicitadas posteriormente. ##### Definição de tipos de variáveis e integridade referencial (1 ponto) - Defina corretamente os tipos de dados para cada coluna (VARCHAR, INT, DECIMAL, etc.). - Crie corretamente as chaves primárias, estrangeiras e demais restrições de integridade (por exemplo NOT NULL, UNIQUE, CHECK, etc., quando aplicável). - Certifique-se de que o banco de dados não permita gravação de dados inconsistentes. ##### Consultas SQL (2 pontos)
+
+=== [5] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (466 caracteres)
+de dados inconsistentes. ##### Consultas SQL (2 pontos) A seguir, alguns exemplos de consultas para testar o funcionamento do seu banco de dados. Você deve criar pelo menos as consultas solicitadas e garantir que retornem informações relevantes: - a) **Listar todos os clientes cadastrados** , ordenados por nome. - b) **Listar todas as vendas realizadas** , incluindo o nome do cliente e a data da venda. - c) **Listar todos os livros** e a respectiva **editora** .
+
+=== [6] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (469 caracteres)
+- c) **Listar todos os livros** e a respectiva **editora** . - d) **Contar quantas vendas cada cliente realizou** (exibir o nome do cliente e total de compras). - e) **Listar todas as editoras** e o **número de livros** associados a cada uma. #### Instruções de Entrega - Responda às questões diretamente no seu script MySQL (todas as instruções CREATE DATABASE, CREATE TABLE, INSERT, SELECT, etc. em um arquivo único). - **Exporte o script** como um arquivo **.sql** .
+
+=== [7] Atividade 1 - Revisão de Banco de Dados 1 - 367540)  (369 caracteres)
+único). - **Exporte o script** como um arquivo **.sql** . - O arquivo .sql deve conter todas as etapas mencionadas acima **sem erros de execução** . - Nomeie o arquivo .sql como atv1.sql. - Envie o arquivo pela plataforma Moodle no link em “Atividade 1 – Revisão de Banco de Dados 1”. **Bons estudos e boa prática no desenvolvimento do seu banco de dados de livraria!**
+
+=== [0] CALENDARIO CMPMPSI 2026-1 (506 caracteres)
+<!-- image --> <!-- image --> 10 5 6 ## CALENDÁRIO CMPMPSI - 2026/1 TADS-5-CMPMPSI-Proj.TCC.1 Prof. Dr. BALTHAZAR, Glauber da Rocha (glauber.balthazar@ifsp.edu.br) <!-- image --> Em vermelho: atividades dos alunos/supervisor de TCC/orientador de TCC ou Em azul: atividade do professor da disciplina (conteudo de aula) <!-- image --> <!-- image --> Fevereiro 2026 - Dom — Fevereiro 2026 - Seg — Fevereiro 2026 - Ter — Fevereiro 2026 - Qua — Fevereiro 2026 - Qui — Fevereiro 2026 - Sex — Fevereiro 2026 - Sab
+
+=== [1] CALENDARIO CMPMPSI 2026-1 (493 caracteres)
+2026 - Qui — Fevereiro 2026 - Sex — Fevereiro 2026 - Sab <!-- image --> <!-- image --> <!-- image --> <!-- image --> <!-- image --> <!-- image --> <!-- image --> Março 2026 - Dom — Março 2026 - Seg — Março 2026 - Ter — Março 2026 - Qua — Março 2026 - Qui — Março 2026 - Sex — Março 2026 - Sab <!-- image --> <!-- image --> <!-- image --> <!-- image --> Abril 2026 - Dom — Abril 2026 - Seg — Abril 2026 - Ter — Abril 2026 - Qua — Abril 2026 - Qui — Abril 2026 - Sex — Abril 2026 - Sab Maio 2026
+
+=== [2] CALENDARIO CMPMPSI 2026-1 (450 caracteres)
+2026 - Qui — Abril 2026 - Sex — Abril 2026 - Sab Maio 2026 Dom Seg Ter Qua Qui Sex Sab 1 2 7 8 9 11 12 13 14 15 16 17 <!-- image --> 18 19 20 21 22 23 24 31 <!-- image --> <!-- image --> 26 27 28 <!-- image --> 30 <!-- image --> Junho 2026 - Dom — Junho 2026 - Seg — Junho 2026 - Ter — Junho 2026 - Qua — Junho 2026 - Qui — Junho 2026 - Sex Sab — Atividades Aula 15 - Entrega para os alunos da Proposta Revisada de Pesquisa com a nota dos avaliadores
+
+=== [3] CALENDARIO CMPMPSI 2026-1 (512 caracteres)
+da Proposta Revisada de Pesquisa com a nota dos avaliadores 1 — 2 — 3 — 4 — 5 — 6 — 01/06 Supervisor de TCC: Orientador e aluno recebem a Proposta 7 — 8 — 9 — 10 — 11 — 12 — 13 — Revisada de Pesquisa com a nota dos avaliadores (20% 14 — 15 — 16 — 17 — 18 — 19 — 20 — NRevi) Orientador: inicia processo de revisão final junto ao aluno TCC 21 — 22 — 23 — 24 — 25 — 26 — 27 — Documento agora vira: Projeto de Pesquisa de 08/06 Aula 16 - Acompanhamento do TCC 28 — 29 — 30 — 1 — 15/06 Aula 17 - Acompanhamento do TCC
+
+=== [4] CALENDARIO CMPMPSI 2026-1 (511 caracteres)
+do TCC 28 — 29 — 30 — 1 — 15/06 Aula 17 - Acompanhamento do TCC 19/06 Aluno: enviar ao orientador a versão final do Projeto de Pesquisa de TCC em PDF Aluno: postar no Moodle a versão final do Projeto de Pesquisa de TCC em PDF 22/06 Aula 18 - Acompanhamento do TCC 26/06 Orientador: entrega ao Supervisor de TCC a nota final (60% NProj) 29/06 Aula 19 - Publicação das notas finais Supervisão de TCC: publicação da nota final 01/07 Aula 20 - Publicação das notas finais Supervisão de TCC: publicação da nota final
+
+=== [5] CALENDARIO CMPMPSI 2026-1 (489 caracteres)
+das notas finais Supervisão de TCC: publicação da nota final Procedimento avaliatório desta disciplina: Art. 13. A avaliação da disciplina CMPMPSI - Metodologia em Projeto de Sistemas será realizada obedecendo aos critérios a seguir, além de outros previamente definidos pelos supervisores de TCC e - respectivas orientações I. Nota da Proposta Inicial de Pesquisa: valerá de 0 (zero) a 10 (dez) pontos; II. Nota da Proposta Revisada de Pesquisa: valerá de 0 (zero) a 10 (dez) pontos; III.
+
+=== [6] CALENDARIO CMPMPSI 2026-1 (469 caracteres)
+de Pesquisa: valerá de 0 (zero) a 10 (dez) pontos; III. Nota do Projeto de Pesquisa: valerá de 0 (zero) a 10 (dez) pontos. §1. A nota da disciplina CMPMPSI será calculada conforme o seguinte critério: NProp × 20% + NRevi × 20% + NProj × 60% · NProp = Nota da Proposta Inicial de Pesquisa; (PROFESSOR DA DISCIPLINA - EU) · NRevi = Nota da Proposta Revisada de Pesquisa; (2 PROFESSORES ALEATÓRIOS DA ÁREA) · NProj = Nota do Projeto de Pesquisa. (PROFESSOR ORIENTADOR) §2.
+
+=== [7] CALENDARIO CMPMPSI 2026-1 (240 caracteres)
+NProj = Nota do Projeto de Pesquisa. (PROFESSOR ORIENTADOR) §2. As notas da proposta inicial e revisada serão atribuídas conforme critérios da disciplina de CMPMPSI e a nota projeto de pesquisa será atribuída exclusivamente pela orientação.
+
+=== [8] CALENDARIO CMPMPSI 2026-1 (175 caracteres)
+09/02 (fevereiro): Aula 1 - Fundamentação do TCC Supervisor de TCC: divulgação das linhas de pesquisa dos professores (Moodle) Supervisor de TCC: formação do grupo no WhatsApp
+
+=== [9] CALENDARIO CMPMPSI 2026-1 (26 caracteres)
+16/02 (fevereiro): Feriado
+
+=== [10] CALENDARIO CMPMPSI 2026-1 (195 caracteres)
+23/02 (fevereiro): Aula 2 - Arquitetura do Trabalho Científico Alunos: definição da formação de duplas ou individual (Moodle) Alunos: entrega da lista tríplice dos orientadores desejados (Moodle)
+
+=== [11] CALENDARIO CMPMPSI 2026-1 (310 caracteres)
+02/03 (março): Aula 3 - Acompanhamento da escrita da Proposta Inicial da Pesquisa Supervisor de TCC: definição do orientador para os alunos Supervisor de TCC: entrega do modelo de carta de aceitação de orientação (Moodle) Supervisor de TCC: entrega do modelo (template) de Proposta Inicial da Pesquisa (Moodle)
+
+=== [12] CALENDARIO CMPMPSI 2026-1 (81 caracteres)
+09/03 (março): Aula 4 - Acompanhamento da escrita da Proposta Inicial da Pesquisa
+
+=== [13] CALENDARIO CMPMPSI 2026-1 (120 caracteres)
+16/03 (março): Aula 5 - Entrega da Proposta Inicial de Pesquisa Alunos: entrega da Proposta Inicial da Pesquisa (Moodle)
+
+=== [14] CALENDARIO CMPMPSI 2026-1 (219 caracteres)
+20/03 (março): Supervisor de TCC: avaliação da Proposta Inicial da Pesquisa (20% NProp) Alunos: data limite para entrega dos alunos da carta de aceitação de orientação (Moodle) Supervisão de TCC: criação do Google Drive
+
+=== [15] CALENDARIO CMPMPSI 2026-1 (183 caracteres)
+23/03 (março): Supervisão de TCC: devolutiva da Proposta Inicial da Pesquisa (Google Drive) Aula 6 - Acompanhamento do TCC Alunos: entrega ao orientador a Proposta Inicial da Pesquisa
+
+=== [16] CALENDARIO CMPMPSI 2026-1 (45 caracteres)
+30/03 (março): Aula 7 - Acompanhamento do TCC
+
+=== [17] CALENDARIO CMPMPSI 2026-1 (45 caracteres)
+06/04 (abril): Aula 8 - Acompanhamento do TCC
+
+=== [18] CALENDARIO CMPMPSI 2026-1 (45 caracteres)
+13/04 (abril): Aula 9 - Acompanhamento do TCC
+
+=== [19] CALENDARIO CMPMPSI 2026-1 (22 caracteres)
+20/04 (abril): Feriado
+
+=== [20] CALENDARIO CMPMPSI 2026-1 (226 caracteres)
+27/04 (abril): Aula 10 - Acompanhamento do TCC Orientador: devolutiva da Proposta Inicial da Pesquisa (diretamente ao aluno) Documento agora vira: Proposta Revisada de Pesquisa Alterar para formato ABNT (artigo ou dissertação)
+
+=== [21] CALENDARIO CMPMPSI 2026-1 (72 caracteres)
+03/05 (maio): Alunos: entrega no Moodle da Proposta Revisada de Pesquisa
+
+=== [22] CALENDARIO CMPMPSI 2026-1 (203 caracteres)
+04/05 (maio): Aula 11 - Envio da Proposta Revisada de Pesquisa para professores da área avaliarem Supervisão de TCC: entrega a Proposta Revisada de Pesquisa para professores avaliadores da área revisarem
+
+=== [23] CALENDARIO CMPMPSI 2026-1 (45 caracteres)
+11/05 (maio): Aula 12 - Acompanhamento do TCC
+
+=== [24] CALENDARIO CMPMPSI 2026-1 (45 caracteres)
+18/05 (maio): Aula 13 - Acompanhamento do TCC
+
+=== [25] CALENDARIO CMPMPSI 2026-1 (45 caracteres)
+25/05 (maio): Aula 14 - Acompanhamento do TCC
+
+=== [26] CALENDARIO CMPMPSI 2026-1 (147 caracteres)
+29/05 (maio): Supervisor de TCC: professoes avaliadores devolvem a Proposta Revisada de Pesquisa com suas considerações e nota final (Google Drive)
