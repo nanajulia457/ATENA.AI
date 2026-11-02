@@ -1,4 +1,4 @@
-# Atena.AI — Assistente Educacional RAG
+# Atena.AI — ASSISTENTE EDUCACIONAL BASEADO EM RETRIEVAL-AUGMENTED GENERATION PARA CONSULTA INTELIGENTE A MATERIAIS DE DISCIPLINA
 
 Implementação do sistema proposto no TCC **"Assistente educacional baseado em
 Retrieval-Augmented Generation para consulta inteligente a materiais de
