@@ -16,3 +16,6 @@ resultados.csv
 Thumbs.db
 .vscode/
 .idea/
+
+# Arquivos de conferência gerados pela ingestão
+data/debug/
